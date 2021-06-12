@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "bezkoder.app.jwtExpirationMs",
+    "type": "java.lang.String",
+    "description": "A description for 'bezkoder.app.jwtExpirationMs'"
+  },
+  {
+    "name": "jwt.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.secret'"
+  },
+  {
+    "name": "log.logger.org.springframework.aop.framework.Cglib2AopProxy",
+    "type": "java.lang.String",
+    "description": "A description for 'log.logger.org.springframework.aop.framework.Cglib2AopProxy'"
+  }
+]}
