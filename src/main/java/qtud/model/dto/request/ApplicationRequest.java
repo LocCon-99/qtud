@@ -6,6 +6,7 @@ public class ApplicationRequest {
 	private String appCode;
 	private String appName;
 	private String description;
+	private Integer securityOption;
 	private Integer status;
 	
 	
@@ -15,19 +16,15 @@ public class ApplicationRequest {
 	public ApplicationRequest() {
 		super();
 	}
-	
-	
-	
-	public ApplicationRequest(String appId, String appCode, String appName, String description, Integer status) {
-		super();
-		this.appId = appId;
-		this.appCode = appCode;
-		this.appName = appName;
-		this.description = description;
-		this.status = status;
+
+
+	public Integer getSecurityOption() {
+		return securityOption;
 	}
 
-
+	public void setSecurityOption(Integer securityOption) {
+		this.securityOption = securityOption;
+	}
 
 	public String getAppId() {
 		return appId;

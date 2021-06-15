@@ -10,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import qtud.model.dto.request.ApplicationRequest;
 import qtud.model.entity.Application;
 import qtud.repository.ApplicationRepository;
 import qtud.service.ApplicationService;
@@ -23,15 +24,30 @@ public class ApplicationServiceImpl implements ApplicationService {
 	ApplicationRepository applicationRepository;
 
 	@Override
-	public Application newApplication(Application application) {
-		// TODO Auto-generated method stub
-		return applicationRepository.save(application);
+	public Application newApplication(ApplicationRequest applicationRequest) {
+		
+		Application app = new Application();
+    	
+    	app.setAppId(applicationRequest.getAppId());
+    	app.setAppCode(applicationRequest.getAppCode());
+    	app.setAppName(applicationRequest.getAppName());
+    	app.setDescription(applicationRequest.getDescription());
+    	app.setStatus(applicationRequest.getStatus());
+		
+		
+		return applicationRepository.save(app);
 	}
 
 	@Override
-	public void updateApplication(Application application) {
+	public void updateApplication(ApplicationRequest applicationRequest) {
 		// TODO Auto-generated method stub
-		 applicationRepository.save(application);
+		Application app = new Application();
+    	app.setAppId(applicationRequest.getAppId());
+    	app.setAppCode(applicationRequest.getAppCode());
+    	app.setAppName(applicationRequest.getAppName());
+    	app.setDescription(applicationRequest.getDescription());
+    	app.setStatus(applicationRequest.getStatus());
+		applicationRepository.save(app);
 	}
 
 	@Override
