@@ -61,4 +61,6 @@ public class ExceptionControllerAdvice {
 		ResponseBase responseMsg = new ResponseBase("1000", ex.getLocalizedMessage());
 		return responseMsg;
 	}
+	
+	
 }

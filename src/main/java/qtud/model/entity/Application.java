@@ -10,13 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import qtud.constant.*;
 
 
 /**
@@ -36,12 +35,14 @@ public class Application implements Serializable {
 	private String appId;
 
 	@Column(name="APP_CODE")
-	@Pattern(regexp = "^[A-Za-z]+$",message = Constants.REGEX_APP_APP_CODE)
+	@Size(min = 1, max = 50)
 	private String appCode;
-
+	
 	@Column(name="APP_NAME")
+	@Size(min = 1, max = 1000)
 	private String appName;
 
+	@Max(1000)
 	private String description;
 
 	@Column(name="SECURITY_OPTION")
